@@ -18,7 +18,7 @@ export default function Home() {
           marginBottom: '1rem',
           color: '#171717'
         }}>
-          To get started, edit the page.tsx file.
+          To get started, edit the page.jsx file.
         </h1>
         <p style={{
           fontSize: '1.125rem',
@@ -41,3 +41,4 @@ export default function Home() {
     </div>
   );
 }
+
