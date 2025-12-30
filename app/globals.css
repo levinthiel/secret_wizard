@@ -1,18 +1,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  /* Color Variables */
+  --egg: #e8e8e8;
+  --fire: #ea9216;
+  --slate: #313841;
+  --slate-light: #3a4750;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--egg);
+  color: var(--slate);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
