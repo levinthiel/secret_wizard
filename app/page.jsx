@@ -34,6 +34,21 @@ export default function Home() {
           This is a secret wizard. Input your secret, we'll do our magic and you'll get a link to share it.
         </ExplanatoryText>
         
+        <StepsContainer>
+          <StepBox>
+            <StepNumber>1</StepNumber>
+            <StepText>write</StepText>
+          </StepBox>
+          <StepBox>
+            <StepNumber>2</StepNumber>
+            <StepText>magic happens</StepText>
+          </StepBox>
+          <StepBox>
+            <StepNumber>3</StepNumber>
+            <StepText>Send the magic secret</StepText>
+          </StepBox>
+        </StepsContainer>
+        
         <Form onSubmit={handleSubmit}>
           <StyledTextarea
             rows="6"
@@ -50,7 +65,18 @@ export default function Home() {
       </StyledMain>
 
       <StyledFooter>
-        {/* Footer content goes here */}
+        <FooterContent>
+          <FooterLinks>
+            <FooterLink href="#" target="_blank" rel="noopener noreferrer">
+              about
+            </FooterLink>
+            <Separator>•</Separator>
+            <FooterLink href="https://levinthiel.vercel.app/" target="_blank" rel="noopener noreferrer">
+              created by Levin Thiel
+            </FooterLink>
+          </FooterLinks>
+          <Copyright>© 2026 Levin Thiel</Copyright>
+        </FooterContent>
       </StyledFooter>
     </>
   );
@@ -81,6 +107,64 @@ const ExplanatoryText = styled.p`
   line-height: 1.5;
   margin: 0;
   text-align: center;
+  font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
+`;
+
+const StepsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+`;
+
+const StepBox = styled.div`
+  flex: 1;
+  padding: 20px 16px;
+  border-radius: 20px;
+  background: var(--egg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  
+  /* Neumorphism raised effect */
+  box-shadow: 
+    6px 6px 12px rgba(0, 0, 0, 0.1),
+    -6px -6px 12px rgba(255, 255, 255, 0.7);
+`;
+
+const StepNumber = styled.div`
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--fire);
+  color: var(--egg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  
+  /* Neumorphism inset effect */
+  box-shadow: 
+    inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.3);
+`;
+
+const StepText = styled.p`
+  color: var(--slate);
+  font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  margin: 0;
+  text-transform: lowercase;
+  font-weight: 500;
 `;
 
 const Form = styled.form`
@@ -96,7 +180,7 @@ const StyledTextarea = styled.textarea`
   border-radius: 20px;
   background: var(--egg);
   color: var(--slate);
-  font-family: inherit;
+  font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
   font-size: 1rem;
   resize: vertical;
   box-sizing: border-box;
@@ -125,7 +209,7 @@ const MagicButton = styled.button`
   border-radius: 20px;
   background: var(--egg);
   color: var(--slate);
-  font-family: inherit;
+  font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -184,4 +268,43 @@ const StyledFooter = styled.footer`
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+`;
+
+const FooterContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+`;
+
+const Copyright = styled.p`
+  color: var(--slate);
+  font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  margin: 0;
+  opacity: 0.8;
+`;
+
+const FooterLinks = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+`;
+
+const FooterLink = styled.a`
+  color: var(--slate);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: var(--fire);
+  }
+`;
+
+const Separator = styled.span`
+  color: var(--slate);
+  opacity: 0.5;
 `;
