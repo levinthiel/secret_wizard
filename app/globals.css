@@ -10,7 +10,7 @@
 }
 
 body {
-  background: var(--egg);
+  background: transparent;
   color: var(--slate);
   font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
   margin: 0;
