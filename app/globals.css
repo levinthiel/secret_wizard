@@ -10,9 +10,9 @@
 }
 
 body {
-  background: var(--egg);
+  background: transparent;
   color: var(--slate);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
