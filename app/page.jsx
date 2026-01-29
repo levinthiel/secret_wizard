@@ -3,6 +3,8 @@ import Image from "next/image";
 import styled from "styled-components";
 import { useState } from "react";
 import { WiStars } from "react-icons/wi";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { MdOutlineWbSunny } from "react-icons/md";
 
 export default function Home() {
   const [secret, setSecret] = useState("");
@@ -85,10 +87,16 @@ export default function Home() {
           <DarkModeToggle>
             <ToggleLabel $isDark={darkMode}>dark mode</ToggleLabel>
             <ToggleSwitch onClick={toggleDarkMode} $isDark={darkMode}>
-              <ToggleSlider $isDark={darkMode} />
+              <ToggleSlider $isDark={darkMode}>
+                {darkMode ? (
+                  <BsFillMoonStarsFill size={14} />
+                ) : (
+                  <MdOutlineWbSunny size={14} />
+                )}
+              </ToggleSlider>
             </ToggleSwitch>
           </DarkModeToggle>
-          <Copyright $darkMode={darkMode}>© 2026 Levin Thiel</Copyright>
+          <Copyright $darkMode={darkMode}>© 2026 Skeletron</Copyright>
         </FooterContent>
       </StyledFooter>
     </Container>
@@ -388,6 +396,10 @@ const ToggleSlider = styled.span`
   border-radius: 50%;
   background: ${props => props.$isDark ? 'var(--fire)' : 'var(--slate)'};
   transition: left 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--egg);
   
   /* Neumorphism effect */
   box-shadow: 
